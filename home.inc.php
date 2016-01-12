@@ -51,7 +51,7 @@ if ($_POST) {
 		$preparedStatement->execute();
 
 		//send the confirmation email
-		$message = "Hello, and thank you for registering.<br> Please validate your email by clicking <a href='clementgirault.com/php/index.php?mail=".$newMail."'>this link</a>.";
+		$message = "Hello, and thank you for registering. Please follow this link to validate your email: http://clementgirault.com/projets/php/exam/index.php?p=validate&mail=".$newMail;
 		$sentMail = mail($newMail, "Confirm email", $message);
 
 		// message sucess

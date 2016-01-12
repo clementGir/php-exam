@@ -1,4 +1,9 @@
 <?php 
+
+if ($_SESSION['logged_in'] == 'ok') {
+	header("Location: index.php?p=admin");
+}
+
 if ($_POST) {
 
 	$errors = array();
@@ -13,7 +18,7 @@ if ($_POST) {
 	$pwd = trim(strip_tags($_POST['pwd']));
 
 	if (is_valid_email($mail) == false){
-        $errors['newMail'] = 'Sorry, the email you entered is not valid';
+        $errors['mail'] = 'Sorry, the email you entered is not valid';
     }
     if ($_POST['mail'] == ''){
         $errors['mail'] = 'Please enter an email adress';
@@ -29,15 +34,17 @@ if ($_POST) {
 
 	$preparedStatement = $connexion->prepare($query);
 	$preparedStatement->execute();
+
 	
 	while($result = $preparedStatement->fetch()){
-
-		if ($result['email'] == $mail && $result['pwd'] == $pwd ) {
+		if ($result['email'] == $mail && $result['pwd'] == $pwd) {
 			//success!
 			$_SESSION['logged_in'] = 'ok';
-			$_SESSION['user'] = $user;
 			header("location: index.php?p=admin");
 		}	
+		else {
+			$errors['login'] = 'Sorry, incorrect email/password';
+		}
 	} 
 }
 ?>

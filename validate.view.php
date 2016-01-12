@@ -12,7 +12,5 @@
 			header("location: index.php");
 			break;
 	}
-
-	
 ?>
-<a href="/">Back</a>
+<a href="index.php">Back</a>

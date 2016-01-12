@@ -21,7 +21,6 @@ while($result = $preparedStatement->fetch()){
 		$timeCreated = $result['hour_created'];
 		$timeCreated = preg_replace('/-|:/', null, $timeCreated);
 		$difference = $currentTime - $timeCreated;
-		echo $difference;
 
 		if ($dateCreated == $currentDate && $difference < 3000) {
 			//same day, less than 30mins later

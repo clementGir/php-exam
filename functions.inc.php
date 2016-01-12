@@ -14,4 +14,13 @@
         }
     }
 
+    //success
+    function message_success($success, $input){
+        if($_POST){
+            if ($success[$input] != '') {
+                return '<p class="success_message">'.$success[$input].'</p>';
+            }
+        }
+    }
+
 ?>

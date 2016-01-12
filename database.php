@@ -1,9 +1,9 @@
 <?php
 
-$host = 'localhost:8889';
-$dbname = 'examen';
-$user = 'root';
-$password = 'root';
+$host = 'db609015748.db.1and1.com';
+$dbname = 'db609015748';
+$user = 'dbo609015748';
+$password = 'rootroot';
 
 // connexion
 try {

@@ -27,7 +27,10 @@ switch ($page) {
 		$app = "home";
 		break;
 }
+
+include $app.'.inc.php';
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -36,7 +39,6 @@ switch ($page) {
 	</head>
 
 	<body>
-		<?php include $app.'.inc.php'; ?>
 		<?php include $page.'.view.php'; ?>
 	</body>
 </html>
